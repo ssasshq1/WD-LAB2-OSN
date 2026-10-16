@@ -1,0 +1,331 @@
+
+/* ===== ОСНОВНЫЕ НАСТРОЙКИ ===== */
+
+:root {
+    --bg: #0a0d12;
+    --panel: #111720;
+    --text: #edf2f7;
+    --muted: #a9b4c2;
+    --line: #2b3543;
+    --gold: #f0bd62;
+    --green: #72d4b0;
+    --blue: #83b9ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 36px 18px;
+
+    background:
+        radial-gradient(
+            circle at 12% 0%,
+            rgba(240, 189, 98, 0.10),
+            transparent 28rem
+        ),
+        radial-gradient(
+            circle at 95% 20%,
+            rgba(114, 212, 176, 0.08),
+            transparent 26rem
+        ),
+        var(--bg);
+
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.page {
+    width: min(1240px, 100%);
+    margin: 0 auto;
+}
+
+/* ===== ЗАГОЛОВОК СТРАНИЦЫ ===== */
+
+.hero {
+    text-align: center;
+    padding: 30px 12px 38px;
+}
+
+.eyebrow {
+    margin: 0 0 14px;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2.1rem, 5vw, 4.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+}
+
+.subtitle {
+    margin: 18px 0 10px;
+    color: #ffffff;
+    font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+    font-weight: 750;
+}
+
+.subtitle span {
+    padding: 0 8px;
+    color: var(--gold);
+}
+
+.intro {
+    max-width: 660px;
+    margin: 0 auto;
+    color: var(--muted);
+}
+
+/* ===== КАРТОЧКА ТАБЛИЦЫ ===== */
+
+.table-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: rgba(17, 23, 32, 0.92);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+caption {
+    padding: 20px 18px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: left;
+    background: #0e141c;
+    border-bottom: 1px solid var(--line);
+}
+
+/* ===== ШАПКА ТАБЛИЦЫ ===== */
+
+thead th {
+    padding: 22px 16px;
+    text-align: left;
+    vertical-align: bottom;
+    background: #1a2330;
+    border-bottom: 1px solid var(--line);
+}
+
+thead .characteristic {
+    width: 22%;
+    color: var(--muted);
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+thead .brand {
+    width: 26%;
+}
+
+.brand-name,
+.model {
+    display: block;
+}
+
+.brand-name {
+    font-size: 1.15rem;
+    font-weight: 850;
+}
+
+.model {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+/* Свой цвет для каждого бренда */
+
+.lamborghini .brand-name {
+    color: var(--gold);
+}
+
+.voyah .brand-name {
+    color: var(--green);
+}
+
+.jaguar .brand-name {
+    color: var(--blue);
+}
+
+/* ===== ЯЧЕЙКИ ТАБЛИЦЫ ===== */
+
+tbody th,
+tbody td,
+tfoot th,
+tfoot td {
+    padding: 17px 16px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+    overflow-wrap: anywhere;
+}
+
+tbody th,
+tfoot th {
+    color: #f0f3f8;
+    font-size: 0.9rem;
+    font-weight: 750;
+}
+
+tbody td,
+tfoot td {
+    color: #cbd4df;
+    font-size: 0.9rem;
+}
+
+/* Чередование оттенков строк */
+
+tbody tr {
+    transition: background-color 180ms ease;
+}
+
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+/* Подсветка строки при наведении */
+
+tbody tr:hover {
+    background: rgba(240, 189, 98, 0.075);
+}
+
+/* Выделение важных характеристик */
+
+mark {
+    padding: 2px 6px;
+    border-radius: 5px;
+    background: rgba(240, 189, 98, 0.16);
+    color: #ffd88f;
+    font-weight: 800;
+}
+
+/* ===== НИЖНЯЯ ЧАСТЬ ТАБЛИЦЫ ===== */
+
+tfoot th,
+tfoot td {
+    background: #1a2330;
+    border-bottom: 0;
+}
+
+tfoot th {
+    color: var(--gold);
+}
+
+/* ===== ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ ===== */
+
+.notes {
+    padding: 34px 0 10px;
+}
+
+.notes h2 {
+    margin: 0 0 18px;
+    font-size: 1.55rem;
+    letter-spacing: -0.025em;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* Раскрывающиеся блоки */
+
+details {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--panel);
+    transition: border-color 180ms ease, transform 180ms ease;
+}
+
+details:hover {
+    border-color: #536174;
+    transform: translateY(-2px);
+}
+
+summary {
+    color: #f2f5f9;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+summary::marker {
+    color: var(--gold);
+}
+
+details p {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* ===== ПРИМЕЧАНИЕ ВНИЗУ ===== */
+
+.footer {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border-left: 3px solid var(--gold);
+    background: rgba(255, 255, 255, 0.035);
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+/* ===== ПЛАНШЕТЫ ===== */
+
+@media (max-width: 900px) {
+    body {
+        padding: 22px 12px;
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 850px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== ТЕЛЕФОНЫ ===== */
+
+@media (max-width: 520px) {
+    .hero {
+        padding: 22px 4px 28px;
+    }
+
+    .eyebrow {
+        font-size: 0.66rem;
+        letter-spacing: 0.12em;
+    }
+
+    .table-card {
+        border-radius: 13px;
+    }
+
+    caption {
+        font-size: 0.82rem;
+    }
+}
